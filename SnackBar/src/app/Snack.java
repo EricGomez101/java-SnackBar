@@ -21,6 +21,11 @@ public class Snack {
         this.name = name;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
     public int getQuantity()
     {
         return quantity;
@@ -29,7 +34,7 @@ public class Snack {
     public void addQuantity(int quantity)
     {
         this.quantity += quantity;
-        System.out.println("Snack: " + name + " gets " + quantity + " more.\ntotal: " + this.quantity);
+        System.out.println("Snack " + name + " gets " + quantity + " more. new total: " + this.quantity);
     }
 
     public void removeQuantity(int amount)

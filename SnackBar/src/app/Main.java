@@ -24,8 +24,14 @@ public class Main {
         food.addSnack(pretzel);
         drink.addSnack(soda);
         drink.addSnack(water);
-
-        jane.pay(drink.buySnack(0, 3));
-
+        
+        // first parameter is the vending machine, second is the snack by index, thrid is quantity to buy.
+        jane.buy(drink, 0, 3);
+        jane.buy(food, 2, 1);
+        bob.buy(drink, 0, 2);
+        jane.addCash(10d);
+        jane.buy(food, 1, 1);
+        food.getSnack(2).addQuantity(12);
+        bob.buy(food, 2, 3);
     }
 }

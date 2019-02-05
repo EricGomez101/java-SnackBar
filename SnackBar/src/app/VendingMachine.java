@@ -48,6 +48,7 @@ public class VendingMachine
             if (snack.getQuantity() > quantity)
             {
                 snack.removeQuantity(quantity);
+
                 return snack.getTotal(quantity);
             }
             else {
@@ -59,6 +60,10 @@ public class VendingMachine
         {
             return 0;
         }
+    }
+    public Snack getSnack(int index)
+    {
+        return inventory.get(index);
     }
 
 }

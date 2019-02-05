@@ -18,11 +18,17 @@ public class Customer
     public void addCash(double cash)
     {
         this.cash += cash;
+        System.out.println(name + " finds $" + cash + " new total: " + this.cash);
     }
     
-    public void pay(double total) 
+    public void buy(VendingMachine machine, int index, int quantity) 
     {
-        this.cash -= total;
+        double total = machine.buySnack(index, quantity);
+        if (total < cash) {
+            cash -= total;
+            Snack snack = machine.getSnack(index);
+            System.out.println(name + " buys " + quantity + " of snack " + snack.getName() + ". cash left: $" + cash + " snack quantity: " + snack.getQuantity());
+        }
     }
 
     public String getName()
